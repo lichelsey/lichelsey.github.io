@@ -1,41 +1,230 @@
-body {
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* FRONT PAGE */
+.frontpage {
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* vertical centering */
+  margin-top: 80px; /* add top margin to lower content */
 }
 
+.frontpage img.avatar {
+  max-width: 250px;
+  height: auto;
+  border-radius: 0; /* rectangular */
+  margin-bottom: 20px;
+}
+
+.frontpage h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #1a1a1a;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.frontpage p.role {
+  font-size: 1.15rem;
+  color: #34495e;
+  margin: 10px 0 20px 0;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.frontpage p.intro {
+  font-size: 1.05rem;
+  color: #2c3e50;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.frontpage .icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.frontpage .icons li {
+  display: inline-block;
+}
+
+/* TABS */
+.tabs {
+  list-style: none;  /* remove bullets */
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tabs li {
+  margin-bottom: 1.5em; /* space between tabs */
+}
+
+.tabs li a {
+  font-size: 1.3em;
+  font-style: italic;
+  font-weight: 400;
+  text-decoration: none;
+  color: #34495e;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+}
+
+.tabs li a:hover {
+  color: #2980b9;
+}
+
+.tabs li a.active {
+  color: #2c3e50;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* GENERAL STYLES */
+body {
+  font-family: 'Georgia', 'Times New Roman', 'Crimson Text', serif;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 30px 20px;
+  padding: 1rem 1rem;
+  background-color: white;
+  border-bottom: 1px solid #eee;
 }
 
-.avatar {
-  width: 150px;
-  border-radius: 0; /* rectangle */
-  display: block;
-  margin: 0 auto 20px;
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 5px 0;
+  color: #2c3e50;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
 }
 
-h1 {
-  margin: 0 0 5px 0;
-}
-
-p {
+header p {
+  font-size: 0.95rem;
+  color: #34495e;
   margin: 0;
+  font-style: italic;
+  font-weight: 300;
 }
 
+/* CONTAINER AND MAIN CONTENT */
 .container {
   display: flex;
-  min-height: 80vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 main {
   flex: 1;
-  padding: 30px;
+  padding: 2rem;
+  max-width: 800px;
 }
 
+main section h2 {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #2c3e50;
+  margin-bottom: 1.2rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+}
+
+main section p {
+  color: #34495e;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* VERTICAL TABS NAVIGATION */
 .vertical-tabs {
-  width: 150px;
-  bor
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vertical-tabs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-tabs li {
+  margin-bottom: 1.5em;
+}
+
+.vertical-tabs li a {
+  font-size: 1.3em;
+  font-style: italic;
+  font-weight: 400;
+  text-decoration: none;
+  color: #34495e;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+}
+
+.vertical-tabs li a:hover {
+  color: #2980b9;
+}
+
+.vertical-tabs li a.active {
+  color: #2c3e50;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .frontpage img.avatar {
+    max-width: 200px;
+  }
+  
+  .tabs, .vertical-tabs {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .tabs, .vertical-tabs ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .tabs li, .vertical-tabs li {
+    margin: 0;
+  }
+}
+
+.frontpage .icons li a {
+  color: black; /* Set icon color to black */
+  transition: none; /* Remove hover animation */
+}
+
+.frontpage .icons li a:hover {
+  color: black; /* Ensure hover stays black */
+}
